@@ -25,14 +25,13 @@ City planners and law enforcement teams often lack tools to efficiently analyze 
 
 ---
 
-## Google Colab Notebook
+## 🔬 Google Colab Notebook
 
-📓 [`traffic_violation_agentic_demo.ipynb`](colab/traffic_violation_agentic_demo.ipynb)  
+[`caption_traffic_violation_pipeline_FINAL.ipynb`](notebook/caption_traffic_violation_pipeline_FINAL.ipynb)  
 This notebook handles caption preprocessing and RAG-ready formatting.  
 > **Note:** To run this, enable "Notebook Access" in Colab and add a secret named `HF_TOKEN`.
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YOUR_USERNAME/YOUR_REPO/blob/main/colab/traffic_violation_agentic_demo.ipynb)
-
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tfu86/CurbBot-A-Traffic-Violation-App/blob/main/notebook/caption_traffic_violation_pipeline_FINAL.ipynb)
 ---
 
 ## Dataset Access
