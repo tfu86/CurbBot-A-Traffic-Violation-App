@@ -1,26 +1,39 @@
 # Traffic Violation Detection Using Caption Data
-*A GPT-4 powered tool for urban traffic monitoring and automated reporting*
+*A GPT-4 powered civic tech tool for urban traffic monitoring and automated reporting*
 
-This project uses AI to identify traffic violations by analyzing caption data from city traffic cameras. Built with multi-agent LLM pipelines and automated workflows in n8n, this tool summarizes violations and sends structured outputs (e.g., Slack messages, CSV reports) for use by planners, analysts, or enforcement teams.
+## Overview
+This project uses AI to detect traffic violations using caption metadata from urban traffic footage. Built with multi-agent LLM pipelines and orchestrated through n8n, this tool generates structured summaries—such as CSV reports and Slack alerts—to support city planners, analysts, and enforcement teams.
 
 ---
 
 ## Use Case
 
-City planners and law enforcement teams often lack tools to efficiently analyze traffic footage at scale. This app uses **caption metadata** to:
+City agencies and urban planners often lack scalable tools for analyzing traffic violations from footage. This system uses automates review by using **caption metadata** to:
 
 - Detect bus lane violations, illegal turns, and unauthorized parking
-- Group and summarize infractions into CSV or Slack/email outputs
-- Enable faster policy feedback and public communication
+- Group and summarize infractions into structrued formats (CSV, Slack)
+- Improve feedback loops for policy enforcement and public communication
 
 ---
 
 ## How It Works
 
-- **Colab**: Hosts preprocessing and caption parsing logic  
-- **RAG & Prompt Engineering**: Tailors prompts dynamically based on input metadata  
-- **LLM Chaining**: Multi-agent reasoning using GPT-4  
-- **n8n Integration**: Orchestrates prompt generation, caption chunking, model calls, Slack output  
+- **Google Colab**: Hosts preprocessing and caption parsing logic  
+- **GPT4 & Prompt Engineering**: User prompts agents for specific violation detection 
+- **LLM Chaining**: Delegates violation detection and summarization tasks across agents 
+- **n8n**: Orchestrates the pipeline: prompt generation, caption chunking, model calls, Slack output  
+
+---
+
+## Folder Structure
+
+```bash
+├── /data/         # Sample caption input (e.g., captions_sample.json)
+├── /notebook/     # Python scripts and notebooks
+├── /n8n/          # Exported n8n workflow
+├── /screenshots/  # Output of workflow
+├── README.md
+```
 
 ---
 
@@ -36,8 +49,9 @@ This notebook handles caption preprocessing and RAG-ready formatting.
 ## Dataset Access
 
 This project uses caption metadata derived from the [OVD-Labs MRTMD dataset](http://43.128.62.24:91/OVD-Labs/MRTMD).  
-- The full dataset is not included in this repo due to size and licensing.
+- The full dataset is not included in this repo due to size and licensing restrictions.
 - A sample (`captions_sample.json`) is provided in this repository for demo purposes only.
+- All rights to the original dataset beling to the creators of the MRTMD dataset
 
 Example format:
 ```json
@@ -46,17 +60,6 @@ Example format:
   "video1_frame_318.jpg": "A motorcycle is stopped in the bus lane",
   "video1_frame_319.jpg": "A van is parked next to a fire hydrant"
 }
-```
-
----
-
-## Folder Structure
-
-```bash
-├── /data/         # Sample caption input (e.g., captions_sample.json)
-├── /notebook/     # Python scripts and notebooks
-├── /n8n/          # Exported n8n workflow
-├── README.md
 ```
 
 ---
@@ -74,12 +77,6 @@ The final output of the system includes:
 - **Tiffany Fu**
 - **Rachel Rose Lieberman**
 - **Brihan Browne**
-
----
-
-## 📜 License
-
-MIT License — feel free to fork and expand responsibly. This repo contains only caption metadata and does not redistribute any original images.
 
 ---
 
